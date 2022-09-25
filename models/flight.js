@@ -6,7 +6,12 @@ const flightSchema = new Schema({
   airline: String,
   airport: String,
   flightNo: Number,
-  departs: Date,
+  departs: {
+    type: Date,
+    default: function() {
+      return new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+    }
+  }
 }, {
   timestamps: true
 })
