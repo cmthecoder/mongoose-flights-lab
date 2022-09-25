@@ -2,14 +2,13 @@
 <link rel="stylesheet" href="/stylesheets/flights/edit.css" />
 <%- include('../partials/nav') %>
 
-
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="/flights<%= flight._id %>?_method=PUT" method="POST">
+  <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
     <label for="airline-input">Airline:</label>
-    <input type="text" name="airline" value="<%= flight.airline %>" id="airline-input">
-    <label for="airport-input">Airport:</label>
-    <select name="airport" id="airport-select">
+    <input type="text" name="title" value="<%= flight.airline %>" id="airline-input">
+    <label for="airport-select">Airport:</label>
+    <select name="aiport" id="airport-select" >
       <option value="<%= flight.airport %>"><%= flight.airport %></option>
       <option value="DEN">DEN</option>
       <option value="AUS">AUS</option>
@@ -17,14 +16,17 @@
       <option value="LAX">LAX</option>
       <option value="SAN">SAN</option>
     </select>
-    <label for="flight-number">FlightNo:</label>
-    <input type="text" name="flightNo" value="<%= flight.flightNo %>" id="flightNo-input">
+    <label for="flightNo-input">FlightNo:</label>
+    <input 
+      type="text" 
+      name="flightNo"
+      value="<%= flight.flightNo %>"
+      id="flightNo-input"
+    >
     <label for="departs-input">Departs:</label>
-    <input type="datetime-local" name="departs" value="<%= flight.date %>" id="departs-input">
+    <input type="datetime-local" name="departs" value="<%= flight.departs %>" id="departs-input">
     <button type="submit">Save Flight</button>
   </form>
 </main>
-
-
 
 <%- include("../partials/footer") %>
