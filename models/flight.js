@@ -7,7 +7,10 @@ const flightSchema = new Schema({
     type: String,
     enum: ['American', 'Southwest', 'United']
   },
-  airport: String,
+  airport: {
+    type: String,
+    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']
+  },
   flightNo: {
     type: Number,
     min: 10,
