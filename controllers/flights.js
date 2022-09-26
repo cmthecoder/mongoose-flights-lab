@@ -83,7 +83,7 @@ function update(req, res){
   }
   Flight.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then(flight => {
-    res.redirect(`/flights/${flight_id}`)
+    res.redirect(`/flights/${flight._id}`)
   })
   .catch(err => {
     console.log(err)
