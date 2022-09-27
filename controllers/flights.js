@@ -124,7 +124,7 @@ function deleteTicket(req, res) {
     })
   })
   .catch(err => {
-    console.log(err, req.params.id)
+    console.log(err)
     res.redirect('/')
   })
 }
