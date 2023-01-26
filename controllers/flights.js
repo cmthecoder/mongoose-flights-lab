@@ -27,8 +27,10 @@ function create(req, res){
 function index(req, res){
   Flight.find({})
   .then(flights => {
+    let sortedFlights = flights.sort((a, b) => {return new Date (a.date) - new Date (b.date)})
+    // Above code works but I am not able to sort my the date. However I am sorting by the time
     res.render('flights/index', {
-      flights: flights,
+      flights: sortedFlights,
       title: "All Flights"
     })
   })
